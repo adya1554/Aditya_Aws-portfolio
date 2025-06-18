@@ -1,11 +1,8 @@
 
-import React, { useState } from 'react';
-import { Award, Upload, ExternalLink, Calendar, Building } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import React from 'react';
+import { Award, ExternalLink, Building } from 'lucide-react';
 
 const Certificates = () => {
-  const [uploadedCerts, setUploadedCerts] = useState<File[]>([]);
-
   const certificates = [
     {
       title: 'Amazon Web Services (AWS)',
@@ -27,13 +24,6 @@ const Certificates = () => {
     }
   ];
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-    if (files) {
-      setUploadedCerts(prev => [...prev, ...Array.from(files)]);
-    }
-  };
-
   return (
     <section id="certificates" className="py-20 px-6 relative">
       <div className="container mx-auto">
@@ -45,7 +35,7 @@ const Certificates = () => {
           <p className="text-muted-foreground text-lg font-mono">$ ls certifications/</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certificates.map((cert, index) => (
             <div
               key={cert.title}
@@ -77,66 +67,6 @@ const Certificates = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Upload Section */}
-        <div className="max-w-4xl mx-auto">
-          <div className="cyber-border bg-card/30 backdrop-blur-sm p-8 rounded-lg">
-            <h3 className="text-2xl font-bold text-primary mb-6 font-mono flex items-center gap-3">
-              <Upload className="animate-bounce" />
-              Upload Additional Certificates
-            </h3>
-            
-            <div className="border-2 border-dashed border-primary/30 rounded-lg p-8 text-center hover:border-primary/50 transition-colors">
-              <input
-                type="file"
-                id="cert-upload"
-                multiple
-                accept=".pdf,.jpg,.jpeg,.png"
-                onChange={handleFileUpload}
-                className="hidden"
-              />
-              <label
-                htmlFor="cert-upload"
-                className="cursor-pointer flex flex-col items-center gap-4"
-              >
-                <Upload className="text-primary" size={48} />
-                <div>
-                  <p className="text-lg font-medium text-foreground mb-2">
-                    Drop your certificates here or click to browse
-                  </p>
-                  <p className="text-muted-foreground text-sm">
-                    Supports PDF, JPG, PNG files
-                  </p>
-                </div>
-              </label>
-            </div>
-
-            {uploadedCerts.length > 0 && (
-              <div className="mt-8">
-                <h4 className="text-lg font-bold text-accent mb-4">Uploaded Certificates:</h4>
-                <div className="grid gap-4">
-                  {uploadedCerts.map((file, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between p-4 bg-muted/10 rounded-lg border border-primary/20"
-                    >
-                      <div className="flex items-center gap-3">
-                        <Award className="text-accent" size={20} />
-                        <span className="text-foreground font-medium">{file.name}</span>
-                        <span className="text-muted-foreground text-sm">
-                          ({(file.size / 1024 / 1024).toFixed(2)} MB)
-                        </span>
-                      </div>
-                      <button className="text-primary hover:text-accent transition-colors">
-                        <ExternalLink size={16} />
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
         </div>
       </div>
     </section>
