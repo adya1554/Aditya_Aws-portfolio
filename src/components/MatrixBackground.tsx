@@ -14,8 +14,8 @@ const MatrixBackground = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const fontSize = 14;
+    const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:,.<>?';
+    const fontSize = 12;
     const columns = canvas.width / fontSize;
     const drops: number[] = [];
 
@@ -24,10 +24,10 @@ const MatrixBackground = () => {
     }
 
     const draw = () => {
-      ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = '#00ff88';
+      ctx.fillStyle = '#00ff00';
       ctx.font = `${fontSize}px JetBrains Mono`;
 
       for (let i = 0; i < drops.length; i++) {
@@ -41,7 +41,7 @@ const MatrixBackground = () => {
       }
     };
 
-    const interval = setInterval(draw, 35);
+    const interval = setInterval(draw, 50);
 
     const handleResize = () => {
       canvas.width = window.innerWidth;
@@ -59,7 +59,7 @@ const MatrixBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none opacity-20 z-0"
+      className="fixed inset-0 pointer-events-none opacity-10 z-0"
     />
   );
 };
