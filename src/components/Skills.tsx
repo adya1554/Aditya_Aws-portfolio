@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Cloud, Server, Network, Code, Tool, Database } from 'lucide-react';
+import { Cloud, Server, Network, Code, Settings, Database } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
@@ -24,7 +23,7 @@ const Skills = () => {
     },
     {
       title: 'Tools & Servers',
-      icon: <Tool className="text-blue-400" size={32} />,
+      icon: <Settings className="text-blue-400" size={32} />,
       skills: ['Git', 'Apache', 'HTTP', 'Nginx', 'Linux', 'Ubuntu', 'Windows', 'Oracle VirtualBox', 'Docker'],
       color: 'blue-400'
     },
