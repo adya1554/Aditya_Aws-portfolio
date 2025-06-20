@@ -134,7 +134,7 @@ const About = () => {
                   </div>
                   <div className="terminal-line">
                     <GitBranch className="text-green-400 mr-3" size={16} />
-                    <span className="text-white">GITLAB="<a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+                    <span className="text-white">GITLAB="<a href="https://github.com/adya1554" target="_blank" rel="noopener noreferrer">
         https://github.com/Adya1554/
       </a>"</span>
                   </div>
