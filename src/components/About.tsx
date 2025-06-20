@@ -130,7 +130,9 @@ const About = () => {
                   </div>
                   <div className="terminal-line">
                     <Linkedin className="text-green-400 mr-3" size={16} />
-                    <span className="text-white">LINKEDIN="Available on request"</span>
+                    <span className="text-white">LINKEDIN=" <a href="https://www.linkedin.com/adi-magadum/" target="_blank" rel="noopener noreferrer">
+        https://www.linkedin.com/adi-magadum/
+      </a>"</span>
                   </div>
                   <div className="terminal-line">
                     <GitBranch className="text-green-400 mr-3" size={16} />
