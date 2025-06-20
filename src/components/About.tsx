@@ -76,7 +76,7 @@ const About = () => {
                   <div className="border-l-2 border-green-400 pl-4">
                     <div className="terminal-line">
                       <BookOpen className="text-green-400 mr-2" size={16} />
-                      <span className="text-white font-bold">B.C.A - Rani Channamma University</span>
+                      <span className="text-white font-bold">B.C.A - Rani Channamma University, Karnataka.</span>
                     </div>
                     <div className="terminal-line">
                       <span className="text-green-300">K.L.E' Society's BCA College, Nipani</span>
